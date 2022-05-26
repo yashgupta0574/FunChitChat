@@ -17,19 +17,19 @@ const Login = () => {
 
   const history = useHistory();
 
-  // const submitHandler = async () => {
-  //   setLoading(true);
-  //   if (!email || !password) {
-  //     toast({
-  //       title: "Please Fill all the Feilds",
-  //       status: "warning",
-  //       duration: 5000,
-  //       isClosable: true,
-  //       position: "bottom",
-  //     });
-  //     setLoading(false);
-  //     return;
-  //   }
+  const submitHandler = async () => {
+    setLoading(true);
+    if (!email || !password) {
+      toast({
+        title: "Please Fill all the Feilds",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setLoading(false);
+      return;
+    }
 
   // console.log(email, password);
   // try {
@@ -67,7 +67,7 @@ const Login = () => {
   //     });
   //     setLoading(false);
   //   }
-  // };
+  };
 
   return (
     <VStack spacing="10px">

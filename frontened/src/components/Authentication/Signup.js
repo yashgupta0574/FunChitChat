@@ -182,14 +182,14 @@ const Signup = () => {
           type="file"
           p={1.5}
           accept="image/*"
-          onChange={(e) => postDetails(e.target.files[0])}
+          //onChange={(e) => postDetails(e.target.files[0])}
         />
       </FormControl>
       <Button
         colorScheme="blue"
         width="100%"
         style={{ marginTop: 15 }}
-        onClick={submitHandler}
+        //onClick={submitHandler}
         isLoading={picLoading}
       >
         Sign Up
