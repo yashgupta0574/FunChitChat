@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
 //const chatRoutes = require("./routes/chatRoutes");
 //const messageRoutes = require("./routes/messageRoutes");
-//const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
 
 dotenv.config();
@@ -40,8 +40,8 @@ app.use("/api/user", userRoutes);
 // --------------------------deployment------------------------------
 
 // Error Handling middlewares
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT;
 const server = app.listen(

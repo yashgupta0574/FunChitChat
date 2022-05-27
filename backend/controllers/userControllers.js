@@ -62,25 +62,26 @@ const registerUser = asyncHandler(async (req, res) => {
 //@description     Auth the user
 //@route           POST /api/users/login
 //@access          Public
-// const authUser = asyncHandler(async (req, res) => {
-//   const { email, password } = req.body;
 
-//   const user = await User.findOne({ email });
+const authUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
 
-//   if (user && (await user.matchPassword(password))) {
-//     res.json({
-//       _id: user._id,
-//       name: user.name,
-//       email: user.email,
-//       //isAdmin: user.isAdmin,
-//       pic: user.pic,
-//       token: generateToken(user._id),
-//     });
-//   } else {
-//     res.status(401);
-//     throw new Error("Invalid Email or Password");
-//   }
-// });
+  const user = await User.findOne({ email });
 
-//module.exports = { allUsers, registerUser, authUser };
-module.exports = { registerUser };
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      //isAdmin: user.isAdmin,
+      pic: user.pic,
+      token: generateToken(user._id),
+    });
+  } else {
+    res.status(401);
+    throw new Error("Invalid Email or Password");
+  }
+});
+
+module.exports = { registerUser, authUser };
+//module.exports = { allUsers };
