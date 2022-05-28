@@ -75,8 +75,8 @@ const chats = [
         email: "jane@example.com",
       },
       {
-        name: "Piyush",
-        email: "piyush@example.com",
+        name: "Yash",
+        email: "yash@example.com",
       },
     ],
     _id: "617a077e18c25468bc7cfdd4",
@@ -90,8 +90,8 @@ const chats = [
         email: "jon@example.com",
       },
       {
-        name: "Piyush",
-        email: "piyush@example.com",
+        name: "Yash",
+        email: "yash@example.com",
       },
       {
         name: "Guest User",
