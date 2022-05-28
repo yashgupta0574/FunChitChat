@@ -9,16 +9,16 @@ import { useHistory } from "react-router";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
-  const toast = useToast();
-  const history = useHistory();
-
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [confirmpassword, setConfirmpassword] = useState();
   const [password, setPassword] = useState();
   const [pic, setPic] = useState();
   const [picLoading, setPicLoading] = useState(false);
+
+  const handleClick = () => setShow(!show);
+  const toast = useToast();
+  const history = useHistory();
 
   const submitHandler = async () => {
     setPicLoading(true);
@@ -43,7 +43,7 @@ const Signup = () => {
       });
       return;
     }
-    console.log(name, email, password, pic);
+    //console.log(name, email, password, pic);
     try {
       const config = {
         headers: {
@@ -60,7 +60,7 @@ const Signup = () => {
         },
         config
       );
-      console.log(data);
+      //console.log(data);
       toast({
         title: "Registration Successful",
         status: "success",
@@ -96,7 +96,7 @@ const Signup = () => {
       });
       return;
     }
-    console.log(pics);
+    //console.log(pics);
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
@@ -109,7 +109,7 @@ const Signup = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
-          console.log(data.url.toString());
+          //console.log(data.url.toString());
           setPicLoading(false);
         })
         .catch((err) => {
