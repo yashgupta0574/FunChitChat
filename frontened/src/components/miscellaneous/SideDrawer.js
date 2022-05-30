@@ -16,7 +16,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/modal";
-
 import { Tooltip } from "@chakra-ui/tooltip";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Avatar } from "@chakra-ui/avatar";
@@ -95,7 +94,7 @@ function SideDrawer() {
   };
 
   const accessChat = async (userId) => {
-    //console.log(userId);
+    console.log(userId);
 
     try {
       setLoadingChat(true);
@@ -143,7 +142,7 @@ function SideDrawer() {
           </Button>
         </Tooltip>
         <Text fontSize="2xl" fontFamily="Work sans">
-          FunChitChat
+          Talk-A-Tive
         </Text>
         <div>
           <Menu>
