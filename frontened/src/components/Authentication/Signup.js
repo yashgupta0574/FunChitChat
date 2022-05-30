@@ -68,6 +68,13 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
+      toast({
+        title: "Refresh your page once :)",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       history.push("/chats");
@@ -177,7 +184,7 @@ const Signup = () => {
         </InputGroup>
       </FormControl>
       <FormControl id="pic">
-        <FormLabel>Upload your Picture</FormLabel>
+        <FormLabel>Upload Your Profile Picture</FormLabel>
         <Input
           type="file"
           p={1.5}

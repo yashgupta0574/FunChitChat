@@ -26,7 +26,7 @@ const Login = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       setLoading(false);
       return;
@@ -51,7 +51,14 @@ const Login = () => {
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
+      });
+      toast({
+        title: "Please Refresh your page once If you don't see any page",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
@@ -63,7 +70,7 @@ const Login = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       setLoading(false);
     }
@@ -104,17 +111,6 @@ const Login = () => {
         isLoading={loading}
       >
         Login
-      </Button>
-      <Button
-        variant="solid"
-        colorScheme="red"
-        width="100%"
-        onClick={() => {
-          setEmail("guest@example.com");
-          setPassword("123456");
-        }}
-      >
-        Get Guest User Credentials
       </Button>
     </VStack>
   );
