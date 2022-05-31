@@ -28,17 +28,17 @@ function Homepage() {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        bg="#e1f5ec"
         w="100%"
-        m="40px 0 15px 0"
-        borderRadius="lg"
-        borderWidth="1px"
+        m="25px 0 15px 0"
+        borderRadius="x-lg"
+        borderWidth="5px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
+        <Text fontSize="5xl" fontFamily="Work sans">
           FunChitChat
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg="#f5ffff" w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>

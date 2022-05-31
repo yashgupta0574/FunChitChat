@@ -59,7 +59,6 @@ const GroupChatModal = ({ children }) => {
         },
       };
       const { data } = await axios.get(`/api/user?search=${search}`, config);
-      console.log(data);
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
@@ -137,6 +136,7 @@ const GroupChatModal = ({ children }) => {
             fontFamily="Work sans"
             d="flex"
             justifyContent="center"
+            color="#598ede"
           >
             Create Group Chat
           </ModalHeader>
@@ -151,7 +151,7 @@ const GroupChatModal = ({ children }) => {
             </FormControl>
             <FormControl>
               <Input
-                placeholder="Add Users eg: John, Piyush, Jane"
+                placeholder="Add Users"
                 mb={1}
                 onChange={(e) => handleSearch(e.target.value)}
               />

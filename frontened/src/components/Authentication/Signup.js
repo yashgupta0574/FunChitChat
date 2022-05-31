@@ -6,6 +6,8 @@ import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
+const dotenv = require("dotenv");
+dotenv.config();
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -43,7 +45,6 @@ const Signup = () => {
       });
       return;
     }
-    //console.log(name, email, password, pic);
     try {
       const config = {
         headers: {
@@ -60,9 +61,8 @@ const Signup = () => {
         },
         config
       );
-      //console.log(data);
       toast({
-        title: "Registration Successful",
+        title: "Registration Successful!",
         status: "success",
         duration: 5000,
         isClosable: true,
@@ -70,7 +70,7 @@ const Signup = () => {
       });
       toast({
         title: "Refresh your page once :)",
-        status: "success",
+        status: "warning",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -103,7 +103,6 @@ const Signup = () => {
       });
       return;
     }
-    //console.log(pics);
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
@@ -116,11 +115,9 @@ const Signup = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
-          //console.log(data.url.toString());
           setPicLoading(false);
         })
         .catch((err) => {
-          console.log(err);
           setPicLoading(false);
         });
     } else {
@@ -161,8 +158,8 @@ const Signup = () => {
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+          <InputRightElement width="5rem">
+            <Button h="2rem" size="sm" onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -176,8 +173,8 @@ const Signup = () => {
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+          <InputRightElement width="5rem">
+            <Button h="2rem" size="sm" onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>

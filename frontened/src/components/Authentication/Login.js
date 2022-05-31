@@ -45,7 +45,6 @@ const Login = () => {
         config
       );
 
-      console.log(JSON.stringify(data));
       toast({
         title: "Login Successful",
         status: "success",
@@ -54,8 +53,8 @@ const Login = () => {
         position: "top",
       });
       toast({
-        title: "Please Refresh your page once If you don't see any page",
-        status: "success",
+        title: "Please Refresh your page once If you didn't see any messages",
+        status: "warning",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -96,15 +95,15 @@ const Login = () => {
             type={show ? "text" : "password"}
             placeholder="Enter password"
           />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+          <InputRightElement width="5rem">
+            <Button h="2rem" size="sm" onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
       </FormControl>
       <Button
-        colorScheme="blue"
+        colorScheme="teal"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
